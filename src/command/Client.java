@@ -2,7 +2,7 @@ package src.command;
 
 import java.io.InputStream;
 import src.command.Invoker;
-import src.command.Re;
+import src.command.Receiver;
 import java.util.Scanner;
 
 public class Client {
