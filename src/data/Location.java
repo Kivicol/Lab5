@@ -1,4 +1,4 @@
-package Collection;
+package src.data;
 
 public class Location {
     private Float x; //Поле не может быть null

@@ -1,4 +1,4 @@
-package Collection;
+package src.data;
 
 public class Position {
     private Integer x; //Поле не может быть null

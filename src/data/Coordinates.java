@@ -1,4 +1,4 @@
-package Collection;
+package src.data;
 
 public class Coordinates {
     private Double x; //Максимальное значение поля: 222, Поле не может быть null

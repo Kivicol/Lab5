@@ -1,4 +1,7 @@
-package Collection;
+package src.data;
+
+import data.Coordinates;
+import data.Location;
 
 public class Route {
     private Integer id; //Поле не может быть null, Значение поля должно быть больше 0, Значение этого поля должно быть уникальным, Значение этого поля должно генерироваться автоматически
