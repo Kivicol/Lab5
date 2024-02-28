@@ -1,20 +1,12 @@
 package src;
 
+import src.command.Client;
+
 import java.util.LinkedList;
 
 public class Main {
     public static void main(String[] args) {
-        String str1 = new String("Hello World!");
-        String str2 = new String("My name is Earl");
-        String str3 = new String("I love Java");
-        String str4 = new String("I live in Moscow");
-
-        LinkedList<String> earlBio = new LinkedList<>();
-        earlBio.add(str1);
-        earlBio.add(str3);
-        earlBio.add(str4);
-        earlBio.add(1, str2);
-
-        System.out.println(earlBio);
+        Client console = new Client();
+        console.start(System.in, args);
     }
 }

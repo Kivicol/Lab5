@@ -12,5 +12,10 @@ public class Client {
         Invoker invoker = new Invoker();
         new Receiver();
 
+        System.out.println("Welcome to app!");
+        while (scanner.hasNextLine()) {
+            String command = scanner.nextLine();
+            invoker.startExecuting(command);
+        }
     }
 }

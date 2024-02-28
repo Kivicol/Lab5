@@ -26,4 +26,9 @@ public class Receiver {
     public static void remove(Coordinates coordinates) {
         table.remove(coordinates);
     }
+
+    public static LinkedList<Coordinates> getTable() {
+        return table;
+    }
+
 }
