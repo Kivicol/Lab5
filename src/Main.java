@@ -1,6 +1,7 @@
 package src;
 
 import src.command.Client;
+import src.command.Receiver;
 
 import java.util.LinkedList;
 
