@@ -1,6 +1,7 @@
 package src.command;
 
 import src.command.Utility.IdGenerate;
+import src.command.exceptions.InvalidDataException;
 import src.command.exceptions.NoElementException;
 import src.data.Route;
 
@@ -34,6 +35,21 @@ public class Receiver {
         }
         table.add(route);
         IdGenerate.add(route.getId());
+    }
+    public Route getById(long id) {
+        for (Route route : table) {
+            if (id == route.getId()) {
+                return route;
+            }
+        }
+        return null;
+    }
+
+    public void updateById(long id, Route route) throws InvalidDataException, NoSuchElementException {
+        Route old = getById(id);
+        table.remove(old);
+        Route.setId(id);
+        table.add(route);
     }
 
     public static void remove(int id) throws NoElementException {

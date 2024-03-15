@@ -11,7 +11,7 @@ public class HelpCom implements BasicCommand{
         LinkedHashMap<String, BasicCommand> commandList = Invoker.getCommandList();
         for (String name: commandList.keySet()){
             BasicCommand command = commandList.get(name);
-            System.out.println(command.getName() + " - " + command.getDescription());
+            System.out.println(command.getName() + " -- " + command.getDescription());
         }
     }
 

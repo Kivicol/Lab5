@@ -6,6 +6,6 @@ import src.data.Location;
 public class LocationBuilderFrom extends Builder{
     public Location create() throws InvalidDataException {
         return new Location(
-                buildInt("Location's \"from\" х value: "), buildLong("Location's \"from\" y value: "), buildString("Location's  \"from\" name: "));
+                buildInt("Location's \"from\" х value: "), buildLong("Location's \"from\" y value: "), buildString("Location's \"from\" name: "));
     }
 }

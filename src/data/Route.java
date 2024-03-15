@@ -32,6 +32,9 @@ public class Route extends OverallElement implements Validation, Serializable {
         id = (long) (Math.random()*10000);
         return id;
     }
+    public static void setId(Long id) {
+        this.id = id;
+    }
 
     @Override
     public boolean validate() {
@@ -61,6 +64,7 @@ public class Route extends OverallElement implements Validation, Serializable {
     public int getId() {
         return (int) id;
     }
+
 
     @Override
     public int compareTo(OverallElement overallElement) {
