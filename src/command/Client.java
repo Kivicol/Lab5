@@ -12,7 +12,7 @@ public class Client {
         Invoker invoker = new Invoker();
         new Receiver();
 
-        System.out.println("Welcome");
+        System.out.println("Welcome to the program!\nTo see available commands, write \"help\"");
         while (scanner.hasNextLine()) {
             String command = scanner.nextLine();
             invoker.startExecuting(command);

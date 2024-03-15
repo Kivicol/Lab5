@@ -1,10 +1,12 @@
 package src.command;
 
 import src.command.Utility.IdGenerate;
+import src.command.exceptions.NoElementException;
 import src.data.Route;
 
 import java.time.ZonedDateTime;
 import java.util.LinkedList;
+import java.util.NoSuchElementException;
 
 public class Receiver {
     private static LinkedList<Route> table = new LinkedList<>();
@@ -18,7 +20,7 @@ public class Receiver {
     public static ZonedDateTime getInitDate() {
         return date;
     }
-    public static void add(Integer id,Route route) {
+    public static void add(Integer id, Route route) {
         if (table == null) {
             table = new LinkedList<>();
         }
@@ -26,12 +28,20 @@ public class Receiver {
         IdGenerate.add(route.getId());
     }
 
-    public static void remove(Route route) {
-        if (table == null || !Receiver.table.contains(route)) {
-            System.exit(0);
+    public static void add(Route route) {
+        if (table == null) {
+            table = new LinkedList<>();
+        }
+        table.add(route);
+        IdGenerate.add(route.getId());
+    }
+
+    public static void remove(int id) throws NoElementException {
+        if (table == null || !Receiver.table.contains(id)) {
+            throw new NoElementException(id);
         } else {
-            IdGenerate.remove(route.getId());
-            table.remove(route);
+            IdGenerate.remove(id);
+            table.remove(id);
         }
     }
 

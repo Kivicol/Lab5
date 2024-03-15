@@ -12,6 +12,8 @@ public class Invoker {
         commandList = new LinkedHashMap<>();
         commandList.put("help", new HelpCom());
         commandList.put("info", new InfoCom());
+        commandList.put("exit", new ExitCom());
+        commandList.put("show", new ShowCom());
     }
 
 

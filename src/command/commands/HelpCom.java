@@ -17,7 +17,7 @@ public class HelpCom implements BasicCommand{
 
     @Override
     public String getName() {
-        return "help";
+        return "Help";
     }
 
     @Override
