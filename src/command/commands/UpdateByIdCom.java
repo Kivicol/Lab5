@@ -3,24 +3,23 @@ package src.command.commands;
 import src.command.Receiver;
 import src.command.Utility.RouteBuilder;
 import src.command.exceptions.InvalidDataException;
-import src.command.exceptions.NoElementException;
 
 import java.util.Arrays;
 
-public class UpdateById implements BasicCommand{
-    private final Receiver receiver;
-    public UpdateById(Receiver a){
-        this.receiver=a;
-    }
+public class UpdateByIdCom implements BasicCommand{
+//    private final Receiver receiver;
+//    public UpdateByIdCom(Receiver receiver){
+//        this.receiver=receiver;
+//    }
+
+    @Override
     public void execute(String[] args){
         try{
-            long id = Long.parseLong(Arrays.toString(args));
-            receiver.updateById(id, new RouteBuilder().create());
+            long id = Long.parseLong(args[1]);
+            Receiver.updateById(id , new RouteBuilder().create());
             System.out.println("Object successfully added");
         } catch (InvalidDataException a){
             System.out.println("Data provided is wrong, try again");
-        } catch (NumberFormatException e){
-            System.err.println("Input the \"long\"-type number");
         }
     }
 

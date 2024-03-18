@@ -32,7 +32,7 @@ public class Route extends OverallElement implements Validation, Serializable {
         id = (long) (Math.random()*10000);
         return id;
     }
-    public static void setId(Long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

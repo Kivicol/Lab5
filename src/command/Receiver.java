@@ -36,7 +36,14 @@ public class Receiver {
         table.add(route);
         IdGenerate.add(route.getId());
     }
-    public Route getById(long id) {
+    public static void updateById(long id, Route route) throws InvalidDataException, NoSuchElementException {
+        Route old = getById(id);
+        table.remove(old);
+        route.setId(id);
+        table.add(route);
+    }
+
+    public static Route getById(long id) {
         for (Route route : table) {
             if (id == route.getId()) {
                 return route;
@@ -45,24 +52,23 @@ public class Receiver {
         return null;
     }
 
-    public void updateById(long id, Route route) throws InvalidDataException, NoSuchElementException {
-        Route old = getById(id);
-        table.remove(old);
-        Route.setId(id);
-        table.add(route);
-    }
-
-    public static void remove(int id) throws NoElementException {
-        if (table == null || !Receiver.table.contains(id)) {
-            throw new NoElementException(id);
-        } else {
-            IdGenerate.remove(id);
-            table.remove(id);
+    public static void remove(long id) throws NoElementException {
+        for (Route route : table) {
+            if (table == null || !(Receiver.table.contains(getById(id)))) {
+                throw new NoElementException(id);
+            } else {
+                IdGenerate.remove((int) id);
+                table.remove(route);
+            }
         }
     }
 
     public static LinkedList<Route> getTable() {
         return table;
+    }
+
+    public static void clear() throws NoElementException{
+        table.clear();
     }
 
 }

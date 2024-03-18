@@ -15,6 +15,9 @@ public class Invoker {
         commandList.put("exit", new ExitCom());
         commandList.put("show", new ShowCom());
         commandList.put("add", new AddCom());
+        commandList.put("update", new UpdateByIdCom());
+        commandList.put("remove", new RemoveByIdCom());
+        commandList.put("clear", new ClearCom());
     }
 
 
