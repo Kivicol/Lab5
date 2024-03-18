@@ -7,11 +7,6 @@ import src.command.exceptions.InvalidDataException;
 import java.util.Arrays;
 
 public class UpdateByIdCom implements BasicCommand{
-//    private final Receiver receiver;
-//    public UpdateByIdCom(Receiver receiver){
-//        this.receiver=receiver;
-//    }
-
     @Override
     public void execute(String[] args){
         try{

@@ -3,7 +3,11 @@ package src.command.commands;
 public class ExitCom implements BasicCommand{
     @Override
     public void execute(String[] args){
-        System.exit(1);
+        if (args.length == 1) {
+            System.exit(1);
+        }else{
+            System.out.println("You have inputted the command incorrectly");
+        }
     }
 
     @Override

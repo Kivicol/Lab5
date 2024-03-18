@@ -2,11 +2,13 @@ package src.command;
 
 import src.command.commands.*;
 
+import java.util.ArrayDeque;
 import java.util.LinkedHashMap;
 
 public class Invoker {
 
     private static LinkedHashMap<String, BasicCommand> commandList;
+    public static ArrayDeque<BasicCommand> tenComs = new ArrayDeque<>();
 
     public Invoker() {
         commandList = new LinkedHashMap<>();
@@ -18,6 +20,9 @@ public class Invoker {
         commandList.put("update", new UpdateByIdCom());
         commandList.put("remove", new RemoveByIdCom());
         commandList.put("clear", new ClearCom());
+        commandList.put("shuffle", new ShuffleCom());
+        commandList.put("history", new HistoryCom());
+        commandList.put("save", new SortCom());
     }
 
 

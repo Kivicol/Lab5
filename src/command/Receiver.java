@@ -6,8 +6,10 @@ import src.command.exceptions.NoElementException;
 import src.data.Route;
 
 import java.time.ZonedDateTime;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.NoSuchElementException;
+import java.util.Random;
 
 public class Receiver {
     private static LinkedList<Route> table = new LinkedList<>();
@@ -67,8 +69,16 @@ public class Receiver {
         return table;
     }
 
-    public static void clear() throws NoElementException{
+    public static void clear() {
         table.clear();
+    }
+
+    public static void shuffle() {
+        Collections.shuffle(table);
+    }
+
+    public static void sort() {
+        Collections.sort(table);
     }
 
 }

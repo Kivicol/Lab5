@@ -10,13 +10,17 @@ import java.util.LinkedList;
 public class AddCom implements BasicCommand{
     @Override
     public void execute(String[] args){
-        try {
-            System.out.println("Adding object to Route");
-            Route route = null;
-            Receiver.add(new RouteBuilder().create());
-            System.out.println("Object added successfully");
-        } catch (InvalidDataException e) {
-            System.err.println("There is a mistake in the provided data, try again");;
+        if (args.length == 1){
+            try {
+                System.out.println("Adding object to Route");
+                Route route = null;
+                Receiver.add(new RouteBuilder().create());
+                System.out.println("Object added successfully");
+            } catch (InvalidDataException e) {
+                System.err.println("There is a mistake in the provided data, try again");;
+            }
+        } else {
+            System.out.println("You have inputted the command incorrectly");
         }
     }
 
