@@ -6,10 +6,7 @@ import src.command.exceptions.NoElementException;
 import src.data.Route;
 
 import java.time.ZonedDateTime;
-import java.util.Collections;
-import java.util.LinkedList;
-import java.util.NoSuchElementException;
-import java.util.Random;
+import java.util.*;
 
 public class Receiver {
     private static LinkedList<Route> table = new LinkedList<>();
@@ -81,4 +78,8 @@ public class Receiver {
         Collections.sort(table);
     }
 
+    public static void minByName() {
+        Optional<Route> minRoute = table.stream().min(Comparator.comparing(Route::getName));
+        minRoute.ifPresent(System.out::println);
+    }
 }

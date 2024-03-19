@@ -9,11 +9,10 @@ public class ShowCom implements BasicCommand{
     @Override
     public void execute(String[] args){
         if(args.length == 1){
-            LinkedList<Route> list = Receiver.getTable();
-            for (Route x : list) {
-                System.out.println(list);
+            for (Route rt : Receiver.getTable()) {
+                System.out.println(rt);
             }
-            if (list.isEmpty()) {
+            if (Receiver.getTable().isEmpty()) {
                 System.out.println("Collection is empty");
             }
         }else{

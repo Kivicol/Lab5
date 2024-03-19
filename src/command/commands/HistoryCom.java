@@ -12,7 +12,7 @@ public class HistoryCom implements BasicCommand{
                 history[n] = command.getName();
                 n++;
             }
-            for (n = 0; n < 10; n++) {
+            for (n = 9; n >= 0; n--) {
                 if (!(history[n] == null)) {
                     System.out.println(history[n]);
                 }

@@ -23,6 +23,7 @@ public class Invoker {
         commandList.put("shuffle", new ShuffleCom());
         commandList.put("history", new HistoryCom());
         commandList.put("save", new SortCom());
+        commandList.put("min_by_name", new MinByNameCom());
     }
 
 
@@ -30,6 +31,13 @@ public class Invoker {
         String commandName = line.split(" ")[0];
         BasicCommand command = commandList.get(commandName);
         command.execute(line.split(" "));
+        if (!(tenComs == null) && tenComs.size() == 10) {
+            tenComs.pop();
+            tenComs.addLast(command);
+        } else {
+            assert tenComs != null;
+            tenComs.addFirst(command);
+        }
     }
 
     public static LinkedHashMap<String, BasicCommand> getCommandList() {
