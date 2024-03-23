@@ -82,4 +82,8 @@ public class Receiver {
         Optional<Route> minRoute = table.stream().min(Comparator.comparing(Route::getName));
         minRoute.ifPresent(System.out::println);
     }
+
+    public static void maxByCoordinate() {
+        
+    }
 }
