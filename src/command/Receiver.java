@@ -1,5 +1,6 @@
 package src.command;
 
+import src.command.Utility.FileManager;
 import src.command.Utility.IdGenerate;
 import src.command.exceptions.InvalidDataException;
 import src.command.exceptions.NoElementException;
@@ -30,11 +31,16 @@ public class Receiver {
     }
 
     public static void add(Route route) {
-        if (table == null) {
-            table = new LinkedList<>();
+        if(route.validate()){
+            if (table == null) {
+                table = new LinkedList<>();
+            }
+            table.add(route);
+            IdGenerate.add(route.getId());
+            System.out.println("Object added successfully");
+        }else{
+            System.err.println("Invalid data, try again");
         }
-        table.add(route);
-        IdGenerate.add(route.getId());
     }
     public static void updateById(long id, Route route) throws InvalidDataException, NoSuchElementException {
         Route old = getById(id);
@@ -77,6 +83,16 @@ public class Receiver {
 
     public static void sort() {
         Collections.sort(table);
+    }
+
+    public static void save() {
+        FileManager fm = new FileManager();
+        try {
+            fm.saveToJson(table);
+            System.out.println("Collection was saved successfully");
+        } catch (NullPointerException e) {
+            System.out.println("Something went wrong, collection wasn't saved");
+        }
     }
 
     public static void minByName() {

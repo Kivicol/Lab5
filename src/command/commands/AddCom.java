@@ -13,9 +13,7 @@ public class AddCom implements BasicCommand{
         if (args.length == 1){
             try {
                 System.out.println("Adding object to Route");
-                Route route = null;
                 Receiver.add(new RouteBuilder().create());
-                System.out.println("Object added successfully");
             } catch (InvalidDataException e) {
                 System.err.println("There is a mistake in the provided data, try again");;
             }

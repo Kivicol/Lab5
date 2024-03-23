@@ -21,8 +21,12 @@ public class Coordinates implements Validation {
 
     @Override
     public boolean validate() {
-        if (y == null) return false;
-        return true;
+        if (x >= 222 || y <= -471) {
+            return false;
+        } else {
+            return true;
+        }
+
     }
 
 }

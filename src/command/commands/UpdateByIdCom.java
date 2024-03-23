@@ -21,7 +21,7 @@ public class UpdateByIdCom implements BasicCommand{
 
     @Override
     public String getName() {
-        return "UpdateById";
+        return "Update (id)";
     }
 
     @Override

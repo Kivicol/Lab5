@@ -22,7 +22,7 @@ public class Invoker {
         commandList.put("clear", new ClearCom());
         commandList.put("shuffle", new ShuffleCom());
         commandList.put("history", new HistoryCom());
-        commandList.put("save", new SortCom());
+        commandList.put("save", new SaveCom());
         commandList.put("min_by_name", new MinByNameCom());
         commandList.put("max_by_coordinate", new MaxByCoordinateCom());
         commandList.put("count_less_than_distance", new CountLessThanDistanceCom());

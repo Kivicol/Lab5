@@ -19,7 +19,7 @@ public class RemoveByIdCom implements BasicCommand{
 
     @Override
     public String getName() {
-        return "RemoveById";
+        return "Remove (id)";
     }
 
     @Override
