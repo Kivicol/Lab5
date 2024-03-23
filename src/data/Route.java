@@ -73,4 +73,11 @@ public class Route extends OverallElement implements Validation, Serializable {
     public int compareTo(OverallElement overallElement) {
         return (int)(this.id - overallElement.getId());
     }
+
+    public Coordinates getCoordinates() {
+        return coordinates;
+    }
+    public float getDistance() {
+        return distance;
+    }
 }

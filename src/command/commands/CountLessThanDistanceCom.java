@@ -2,15 +2,13 @@ package src.command.commands;
 
 import src.command.Receiver;
 
-public class MaxByCoordinateCom implements BasicCommand{
+public class CountLessThanDistanceCom implements BasicCommand{
+
     @Override
     public void execute(String[] args) {
         if (!(Receiver.getTable().isEmpty())) {
-            if (args.length == 1) {
-                Receiver.maxByCoordinate();
-            } else {
-                System.out.println("You have inputted the command incorrectly");
-            }
+            float dist = Float.parseFloat(args[1]);
+            Receiver.countLessThanDistance(dist);
         } else {
             System.err.println("Collection is empty, can't process the command");
         }
@@ -18,11 +16,11 @@ public class MaxByCoordinateCom implements BasicCommand{
 
     @Override
     public String getName() {
-        return "Max_by_coordinate";
+        return "Count_less_than_distance";
     }
 
     @Override
     public String getDescription() {
-        return "returns the maximal element of the collection by \"Coordinates\" attribute";
+        return "Counts the number of elements whose distance is less than the specified one";
     }
 }

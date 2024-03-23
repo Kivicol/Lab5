@@ -3,6 +3,7 @@ package src.command;
 import src.command.Utility.IdGenerate;
 import src.command.exceptions.InvalidDataException;
 import src.command.exceptions.NoElementException;
+import src.data.Coordinates;
 import src.data.Route;
 
 import java.time.ZonedDateTime;
@@ -84,6 +85,19 @@ public class Receiver {
     }
 
     public static void maxByCoordinate() {
-        
+        for (int i = 0; i < table.size() - 1; i++) {
+            if (table.get(i).getCoordinates().getValue() > table.get(i + 1).getCoordinates().getValue()) {
+                System.out.println(table.get(i));
+            }
+        }
+    }
+    public static void countLessThanDistance(float dist) {
+        int count = 0;
+        for (Route route : table) {
+            if (route.getDistance() < dist) {
+                count++;
+            }
+        }
+        System.out.println(count);
     }
 }

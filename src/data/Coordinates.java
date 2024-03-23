@@ -9,6 +9,10 @@ public class Coordinates implements Validation {
         this.y = y;
     }
 
+    public long getValue() {
+        return (this.y + this.x);
+    }
+
 
     @Override
     public String toString() {

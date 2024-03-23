@@ -24,6 +24,8 @@ public class Invoker {
         commandList.put("history", new HistoryCom());
         commandList.put("save", new SortCom());
         commandList.put("min_by_name", new MinByNameCom());
+        commandList.put("max_by_coordinate", new MaxByCoordinateCom());
+        commandList.put("count_less_than_distance", new CountLessThanDistanceCom());
     }
 
 
