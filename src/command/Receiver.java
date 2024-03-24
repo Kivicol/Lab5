@@ -72,6 +72,9 @@ public class Receiver {
     public static LinkedList<Route> getTable() {
         return table;
     }
+    public static void setTable(LinkedList<Route> tb) {
+        table = tb;
+    }
 
     public static void clear() {
         table.clear();
@@ -115,5 +118,8 @@ public class Receiver {
             }
         }
         System.out.println(count);
+    }
+    public static void executeScript(String filename) {
+
     }
 }

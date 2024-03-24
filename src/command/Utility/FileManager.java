@@ -15,7 +15,7 @@ import src.data.Route;
 
 public class FileManager {
 
-    static String filePath = System.getenv("FILE_PATH") + "\\data.json";
+    public static String filePath = System.getenv("FILE_PATH") + "\\collection_data.json";
 
     public void saveToJson(LinkedList<Route> table) {
         GsonBuilder gsonBuilder = new GsonBuilder()
@@ -30,30 +30,31 @@ public class FileManager {
         }
     }
 
-    public LinkedList<Route> loadFromJson() throws JsonSyntaxException, JsonIOException{
+    public static LinkedList<Route> loadFromJson() throws JsonSyntaxException, JsonIOException{
         LinkedList<Route> table = new LinkedList<>();
-        ArrayList<Route> buffer;
-        IdGenerate idGenerate = new IdGenerate();
-        try{
+        try {
             File file = new File(filePath);
-            Scanner scan = new Scanner(file);
-            Type itemsArrayType = new TypeToken<ArrayList<Route>>() {}.getType();
-            String data = "";
-            while (scan.hasNextLine()){
-                data = data.concat(scan.nextLine());
+            if (!file.exists()) {
+                System.out.println("File not found");
+                return table;
             }
-            buffer = new Gson().fromJson(data, itemsArrayType);
+            Scanner scan = new Scanner(file);
+            String data = scan.useDelimiter("\\A").next();
+            scan.close();
+            Type itemsArrayType = new TypeToken<ArrayList<Route>>() {}.getType();
+            Gson gson = new GsonBuilder()
+                    .registerTypeAdapter(ZonedDateTime.class, new TimeAdapter())
+                    .create();
+            ArrayList<Route> buffer = gson.fromJson(data, itemsArrayType);
             for (Route route : buffer){
                 table.add(route);
-                idGenerate.add(IdGenerate.generateId());
+                IdGenerate.add(IdGenerate.generateId());
             }
-            return table;
-        }catch (JsonSyntaxException e){
-            System.out.println("Something wrong with the file or it is empty.");
-            return table;
-        }catch (JsonIOException | FileNotFoundException e){
+        } catch (FileNotFoundException e) {
             System.out.println("File not found");
-            return table;
+        } catch (JsonSyntaxException | JsonIOException e) {
+            System.out.println("Something wrong with the file or it is empty.");
         }
+        return table;
     }
 }
