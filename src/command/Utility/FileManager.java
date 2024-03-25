@@ -23,12 +23,13 @@ public class FileManager {
                 .setPrettyPrinting().create().newBuilder();
         Gson gson = gsonBuilder.create();
         String data = gson.toJson(table);
-        try(BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(filePath))) {
-            bufferedWriter.write(data);
+        try(BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(new FileOutputStream(filePath))) {
+            bufferedOutputStream.write(data.getBytes());
         }catch (IOException e){
             System.out.println("Smth went wrong, data was not saved");
         }
     }
+
 
     public static LinkedList<Route> loadFromJson() throws JsonSyntaxException, JsonIOException{
         LinkedList<Route> table = new LinkedList<>();

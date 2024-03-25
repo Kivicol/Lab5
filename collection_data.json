@@ -1,35 +1,16 @@
 [
   {
-    "id": 8020,
-    "name": "7",
-    "coordinates": {
-      "x": 7,
-      "y": 7
-    },
-    "creationDate": "2024-03-24T21:32:07.1269941+03:00[Europe/Moscow]",
-    "from": {
-      "x": 7,
-      "y": 7,
-      "name": "7"
-    },
-    "to": {
-      "x": 7,
-      "y": 7,
-      "name": "7"
-    },
-    "distance": 7.0
-  },
-  {
-    "id": 2817,
+    "id": 4606,
     "name": "9",
     "coordinates": {
       "x": 9,
       "y": 9
     },
-    "creationDate": "2024-03-24T21:53:41.8991241+03:00[Europe/Moscow]",
+    "creationDate": "2024-03-25T21:56:52.7151807+03:00[Europe/Moscow]",
     "from": {
       "x": 9,
-      "y": 9
+      "y": 9,
+      "name": "9"
     },
     "to": {
       "x": 9,
