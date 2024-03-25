@@ -15,6 +15,7 @@ public class Invoker {
         commandList.put("add", new AddCom());
         commandList.put("clear", new ClearCom());
         commandList.put("count_less_than_distance", new CountLessThanDistanceCom());
+        commandList.put("execute_script", new ExecuteScriptCom());
         commandList.put("exit", new ExitCom());
         commandList.put("help", new HelpCom());
         commandList.put("history", new HistoryCom());
@@ -29,7 +30,7 @@ public class Invoker {
     }
 
 
-    public void startExecuting(String line) {
+    public static void startExecuting(String line) {
         String commandName = line.split(" ")[0];
         BasicCommand command = commandList.get(commandName);
         command.execute(line.split(" "));

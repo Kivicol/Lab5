@@ -119,7 +119,7 @@ public class Receiver {
         }
         System.out.println(count);
     }
-    public static void executeScript(String filename) {
+    public static void executeScript(String filePath, Invoker invoker) {
 
     }
 }
