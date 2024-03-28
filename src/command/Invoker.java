@@ -7,6 +7,10 @@ import java.util.LinkedHashMap;
 
 public class Invoker {
 
+    /**
+     * Class for checking commands inputted by user and executing them
+     */
+
     private static LinkedHashMap<String, BasicCommand> commandList;
     public static ArrayDeque<BasicCommand> tenComs = new ArrayDeque<>();
 

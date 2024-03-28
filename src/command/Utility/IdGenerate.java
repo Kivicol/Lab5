@@ -5,6 +5,10 @@ import src.data.Location;
 import java.util.ArrayList;
 
 public class IdGenerate {
+
+    /**
+     * Class for generating unique ids for objects and storing them
+     */
     private static final Integer min = 10000;
     private static final Integer max = 10000000;
     private static ArrayList<Integer> IdListing = new ArrayList<>();

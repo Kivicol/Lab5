@@ -15,6 +15,9 @@ import src.data.Route;
 
 public class FileManager {
 
+    /**
+     * Class used for saving and loading objects of class "Route" to/from JSON data file
+     */
     public static String filePath = System.getenv("FILE_PATH") + "collection_data.json";
 
     public void saveToJson(LinkedList<Route> table) {

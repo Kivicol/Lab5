@@ -6,6 +6,10 @@ import src.command.exceptions.NoElementException;
 public class RemoveByIdCom implements BasicCommand{
 
 
+    /**
+     * Command 'Remove by id'
+     * Removes the object by it's id
+     */
     @Override
     public void execute(String[] args) {
         try {

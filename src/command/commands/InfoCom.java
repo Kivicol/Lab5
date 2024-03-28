@@ -4,6 +4,11 @@ import src.command.Receiver;
 import src.data.Route;
 
 public class InfoCom implements BasicCommand{
+
+    /**
+     * Command 'info'
+     * Information about the collection
+     */
     @Override
     public void execute(String[] args){
         if(args.length == 1){
@@ -22,6 +27,6 @@ public class InfoCom implements BasicCommand{
 
     @Override
     public String getDescription() {
-        return "information about the program";
+        return "information about the collection";
     }
 }

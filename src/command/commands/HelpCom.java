@@ -5,6 +5,11 @@ import src.command.Invoker;
 import java.util.LinkedHashMap;
 
 public class HelpCom implements BasicCommand{
+
+    /**
+     * Command 'help'
+     * Shows all available commands
+     */
     @Override
     public void execute(String[] args){
         if(args.length == 1) {

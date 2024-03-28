@@ -4,6 +4,12 @@ package src.command.Utility;
 import src.command.Invoker;
 
 public  abstract class Builder {
+
+
+    /**
+     * Abstract class for building strings, longs, ints and floats respectively
+     */
+
     protected Reader scanner;
 
     public Builder(){

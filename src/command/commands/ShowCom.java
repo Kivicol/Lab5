@@ -6,6 +6,11 @@ import src.data.Route;
 import java.util.LinkedList;
 
 public class ShowCom implements BasicCommand{
+
+    /**
+     * Command 'Show'
+     * Shows all elements in the collection
+     */
     @Override
     public void execute(String[] args){
         if(args.length == 1){

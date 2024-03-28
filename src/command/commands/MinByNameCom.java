@@ -3,6 +3,11 @@ package src.command.commands;
 import src.command.Receiver;
 
 public class MinByNameCom implements BasicCommand{
+
+    /**
+     * Command 'Min_by_name'
+     * Returns the minimal element of the collection by name
+     */
     @Override
     public void execute(String[] args) {
 

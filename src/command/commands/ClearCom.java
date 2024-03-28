@@ -7,6 +7,10 @@ import javax.sound.midi.Soundbank;
 
 public class ClearCom implements BasicCommand{
 
+    /**
+     * Command 'clear'
+     * Clears the collection
+     */
     @Override
     public void execute(String[] args) {
         if (args.length == 1) {

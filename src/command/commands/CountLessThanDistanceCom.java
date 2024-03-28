@@ -4,6 +4,10 @@ import src.command.Receiver;
 
 public class CountLessThanDistanceCom implements BasicCommand{
 
+    /**
+     * Command 'Count_less_than_distance'
+     * Counts the number of elements whose distance is less than the specified one
+     */
     @Override
     public void execute(String[] args) {
         if (!(Receiver.getTable().isEmpty())) {

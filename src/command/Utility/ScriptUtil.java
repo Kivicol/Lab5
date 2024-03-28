@@ -4,6 +4,10 @@ import java.io.*;
 import java.util.ArrayDeque;
 
 public class ScriptUtil implements Reader{
+
+    /**
+     * Utility class for reading script files and pushing them to the stack to work around recursions
+     */
     private static final ArrayDeque<String> filepaths = new ArrayDeque<>();
     private static final ArrayDeque<BufferedReader> reader = new ArrayDeque<>();
 

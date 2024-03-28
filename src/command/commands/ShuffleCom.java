@@ -4,6 +4,10 @@ import src.command.Receiver;
 
 public class ShuffleCom implements BasicCommand{
 
+    /**
+     * Command 'Shuffle'
+     * Shuffles objects in collection
+     */
     @Override
     public void execute(String[] args) {
         if (!(Receiver.getTable().isEmpty())) {

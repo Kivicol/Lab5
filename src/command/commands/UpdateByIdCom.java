@@ -7,6 +7,11 @@ import src.command.exceptions.InvalidDataException;
 import java.util.Arrays;
 
 public class UpdateByIdCom implements BasicCommand{
+
+    /**
+     * Command 'Update by id'
+     * Updates the object by it's id
+     */
     @Override
     public void execute(String[] args){
         try{

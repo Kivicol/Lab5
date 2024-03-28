@@ -11,6 +11,10 @@ import java.time.ZonedDateTime;
 import java.util.*;
 
 public class Receiver {
+
+    /**
+     * Class for woking around with collection
+     */
     private static LinkedList<Route> table = new LinkedList<>();
     private static ZonedDateTime date;
 

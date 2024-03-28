@@ -1,6 +1,11 @@
 package src.command.commands;
 
 public class ExitCom implements BasicCommand{
+
+    /**
+     * Command 'exit'
+     * Exits the program
+     */
     @Override
     public void execute(String[] args){
         if (args.length == 1) {

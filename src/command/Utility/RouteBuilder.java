@@ -8,6 +8,9 @@ import java.time.ZonedDateTime;
 
 public class RouteBuilder extends Builder{
 
+    /**
+     * Class for building objects of class "Route"
+     */
     public Route create() throws InvalidDataException {
         return new Route(
                 buildString("Route name:"),

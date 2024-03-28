@@ -4,6 +4,10 @@ import src.command.Receiver;
 
 public class SortCom implements BasicCommand{
 
+    /**
+     * Command 'Sort'
+     * Sorts the collection
+     */
     @Override
     public void execute(String[] args) {
         if (!(Receiver.getTable().isEmpty())) {

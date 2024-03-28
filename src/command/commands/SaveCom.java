@@ -5,6 +5,11 @@ import src.command.Utility.FileManager;
 import src.data.Route;
 
 public class SaveCom implements BasicCommand{
+
+    /**
+     * Command 'save'
+     * Saves the collection into a json file
+     */
     @Override
     public void execute(String[] args){
         if(args.length == 1){

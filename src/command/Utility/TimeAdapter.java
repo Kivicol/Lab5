@@ -7,6 +7,10 @@ import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class TimeAdapter extends TypeAdapter<ZonedDateTime> {
+
+    /**
+     * Class for adapting pesky "ZonedDateTime" variables for "Builders"
+     */
     private static final DateTimeFormatter formatter = DateTimeFormatter.ISO_ZONED_DATE_TIME;
 
     @Override

@@ -11,6 +11,11 @@ import java.io.IOException;
 import java.util.NoSuchElementException;
 
 public class ExecuteScriptCom implements BasicCommand{
+
+    /**
+     * Command 'execute_script'
+     * Executes the script from the provided file
+     */
     @Override
     public void execute(String[] args) {
         String path = System.getenv("FILE_PATH") + args[args.length - 1];

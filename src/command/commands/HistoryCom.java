@@ -3,6 +3,11 @@ package src.command.commands;
 import src.command.Invoker;
 
 public class HistoryCom implements BasicCommand{
+
+    /**
+     * Command 'history'
+     * Shows the last 10 used commands
+     */
     @Override
     public void execute(String[] args) {
         if (args.length == 1) {

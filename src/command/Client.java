@@ -13,6 +13,9 @@ import java.util.Scanner;
 import static src.command.Utility.FileManager.filePath;
 
 public class Client {
+    /**
+     * Class for reading user's input and executing commands
+     */
     public void start(InputStream input, String[] args){
         Scanner scanner = new Scanner(input);
         Invoker invoker = new Invoker();

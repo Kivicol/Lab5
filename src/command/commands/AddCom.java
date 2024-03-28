@@ -8,6 +8,11 @@ import src.data.Route;
 import java.util.LinkedList;
 
 public class AddCom implements BasicCommand{
+
+    /**
+     * Command 'add'
+     * Adds an element to the collection
+     */
     @Override
     public void execute(String[] args){
         if (args.length == 1){
