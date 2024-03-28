@@ -10,12 +10,15 @@ import src.command.exceptions.NoElementException;
 
 import java.util.Scanner;
 
+import static src.command.Utility.FileManager.filePath;
+
 public class Client {
     public void start(InputStream input, String[] args){
         Scanner scanner = new Scanner(input);
         Invoker invoker = new Invoker();
         new Receiver();
 
+        System.out.println(System.getenv("FILE_PATH"));
         Receiver.setTable(FileManager.loadFromJson());
         System.out.println("Welcome to the program!\nTo see available commands, write \"help\"");
         while (scanner.hasNextLine()) {

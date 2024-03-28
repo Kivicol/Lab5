@@ -22,7 +22,7 @@ public class ScriptUtil implements Reader{
         filepaths.pop();
     }
     public static boolean fileReapeting(String filepath){
-        return filepath.contains(new File(filepath).getAbsolutePath());
+        return filepaths.contains(new File(filepath).getAbsolutePath());
     }
 
     @Override

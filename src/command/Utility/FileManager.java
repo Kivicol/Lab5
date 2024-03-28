@@ -15,7 +15,7 @@ import src.data.Route;
 
 public class FileManager {
 
-    public static String filePath = System.getenv("FILE_PATH") + "\\collection_data.json";
+    public static String filePath = System.getenv("FILE_PATH") + "collection_data.json";
 
     public void saveToJson(LinkedList<Route> table) {
         GsonBuilder gsonBuilder = new GsonBuilder()

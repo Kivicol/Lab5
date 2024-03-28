@@ -57,14 +57,11 @@ public  abstract class Builder {
         while(true){
             System.out.println("Input " + name);
             input=scanner.nextline();
-            if (Float.parseFloat(input) > 1) {
-                try {
-                    return Float.parseFloat(input);
-                } catch (NumberFormatException e) {
-                    System.err.println("The specified number must be \"float\"");
-                }
-            }else{
-                System.err.println("The specified number must be \"> 1\"");
+            try {
+                return Float.parseFloat(input);
+            }
+            catch (NumberFormatException e){
+                System.err.println("The specified number must be \"float\"");
             }
         }
     }

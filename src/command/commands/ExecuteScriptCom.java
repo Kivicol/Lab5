@@ -13,26 +13,23 @@ import java.util.NoSuchElementException;
 public class ExecuteScriptCom implements BasicCommand{
     @Override
     public void execute(String[] args) {
-        String path = System.getenv("FILE_PATH") + "\\" + args[1];
+        String path = System.getenv("FILE_PATH") + args[args.length - 1];
         try {
             FileUtil.setFileMode(true);
             ScriptUtil.pushFile(path);
             for (String line = ScriptUtil.readfile(); line != null; line = ScriptUtil.readfile()) {
                 try{
-                    String[] cmd = (line + " ").split(" ", 2);
+                    String[] cmd = (line).split(" ", 2);
                     if (cmd[0].isBlank()) return;
                     if (cmd[0].equals("execute_script")) {
                         if (ScriptUtil.fileReapeting(cmd[1])){
-                            System.err.println("Found recursion in " + new File(cmd[1]).getAbsolutePath());
-                            continue;
+                            System.err.println("Found recursion in " + new File(cmd[1]).getAbsolutePath() + ", exiting");
+                            break;
                         }
 
                     }
-                    System.out.println("Executing command " + cmd[0]);
-                    Invoker.startExecuting(cmd[0]);
-                    if (cmd[0].equals("execute_script")){
-                        ScriptUtil.popfile();
-                    }
+                    System.out.println("\033[35m" + "Executing command " + cmd[0] + "\033[0m");
+                    Invoker.startExecuting(String.join(" ", cmd));
                 } catch (NoSuchElementException ignored) {
                 }
             }
